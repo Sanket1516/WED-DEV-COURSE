@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <title>Live web page</title>
+</head>
+<body ng-app="MyApp" ng-controller="ctrl">
+    <h1>One way binding</h1>
+    <p>The value of a is {{a}}</p>
+    <p>The value of b is {{b}}</p>
+    <script>
+        let app = angular.module("MyApp",[]);
+        app.controller("ctrl",function ($scope){
+        $scope.a=5;
+        $scope.b=10;
+        })
+    </script>
+</body>
+</html>
+
+
+Two way binding 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+ </head>
+ <body ng-app="MyApp" ng-controller="ctrl">
+    <h1>Two way binding</h1>
+    Enter the value of x : 
+    <input type="text" ng-model="x">
+    <p>{{x}}</p>
+    <script>
+        let app = angular.module("MyApp",[]);
+        app.controller("ctrl",function($scope){
+            $scope.x="";
+        })
+    </script>
+ </body>
+ </html>
+
+
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Like and Dislike Function</title>
+</head>
+<body  ng-controller="ctrl">
+    <h2>Feedback Form</h2>
+    <button ng-disabled="statuslike" ng-click="like()">LIKE {{LIKE}}</button>
+    <button ng-disabled="statusdislike" ng-click="dislike()">DISLIKE {{DISLIKE}}</button>
+
+    <script>
+        let app = angular.module("myapp", []);
+        app.controller("ctrl", function($scope) {
+            $scope.LIKE = 0;
+            $scope.DISLIKE = 0;
+            $scope.statuslike = false;
+            $scope.statusdislike = false;
+
+            $scope.like = function() {
+                $scope.LIKE++;
+                $scope.statuslike = true;
+            };
+
+            $scope.dislike = function() {
+                $scope.DISLIKE++;
+                $scope.statusdislike = true;
+            };
+        });
+    </script>
+</body>
+</html>

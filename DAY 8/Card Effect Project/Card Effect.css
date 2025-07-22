@@ -1,0 +1,51 @@
+#one{
+    color:white;
+    height: 250px;
+    width: 150px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 5px black;
+    transition-duration:0.5s;
+    transition-timing-function: ease-in;
+}
+
+#one:hover{
+    box-shadow:7px 7px 10px black
+}
+
+#two{
+    color:white;
+    height: 250px;
+    width: 150px;
+    margin: 20px;
+    border-radius: 20px; 
+    box-shadow: 2px 2px 5px black;
+    transition-duration:0.5s;
+    transition-timing-function: ease-in;
+}
+
+#two:hover{
+    box-shadow:7px 7px 10px black;
+}
+
+.Inner{
+    width:150px;
+    height:80px;
+}
+
+img{
+    width:100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+div{
+    display:inline-block;
+    color: black;
+}
+
+#Text{
+    padding-left: 10px;
+}
+
+

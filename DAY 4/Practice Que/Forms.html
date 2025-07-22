@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h3>Registration Form</h3>
+    <form action = "/action">
+        <div>
+        <input placeholder = "First Name" name ="FN">
+        <input placeholder = "Last Name" name = "LS">
+        </div>
+        <div>
+            <label for = "Select">Please Select Gender :</label>
+            <select id = Select name="Gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option vlue ="Transgender">Transgender</option>
+            </select>
+        </div>
+        <div>
+            Do you Agree to all the terms of services ?                         
+            <input type ="checkbox" id ="Checkbox" name ="Terms and services">
+            <label for = "Checkbox">Yes,I Agree</label>
+        </div>
+        <button type = "submit">Register</button>
+    </form>
+    <br>
+
+
+
+    <hr>
+
+
+
+    <br>
+    <form action="/action">
+        <div>
+            <label for="name">Name:</label>
+            <input type = "text" name = "Name" id = "name">
+        </div>
+        <div>
+            Sex :
+            <input type = "radio" name = "sex" id = "Sex" value = "M">
+            <label for="Male">Male</label>
+            <input type="radio" name = "sex" id = "female" value = "F">
+            <label for = "Female">Female</label>
+        </div>
+        <div>
+            <label for="Country">Country :</label>
+            <select name="Country" id="Country">
+                <option value="India">India</option>
+                <option value="Nepal">Nepal</option>
+                <option value="Canada">Canada</option>
+                <option value="USA">USA</option>
+            </select>
+        </div>
+        <div>
+            <label for="TextArea">Message :</label>
+            <textarea name="Message" id="Textarea" placeholder ="Enter the message here"></textarea>
+        </div>
+        <div>
+            <input id = "Checkbox" type="checkbox" name = "Suscribe">
+            <label for="Checkbox">Suscribe</label>
+        </div>
+        <button>submit</button>
+    </form>

@@ -1,0 +1,65 @@
+body{
+    text-align: center;
+}
+
+.instructions {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.instructions-list {
+    text-align: left;
+    display: inline-block;
+    margin-bottom: 1rem;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    list-style-type: decimal;
+    font-size: 1.2rem;
+    color: #000000;
+    max-width: 400px;
+}
+
+.instructions-list li {
+    margin-bottom: 10px;
+}
+
+.btn{
+    height: 200px;
+    width: 200px;
+    border:10px solid black;
+    border-radius: 20%;
+    margin: 1rem;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.red{
+    background-color: #d95988;
+}
+
+.yellow{
+    background-color: #f99b45;
+}
+
+.green{
+    background-color: #63aa30;
+}
+
+.purple{
+    background-color: #819ff9 ;
+}
+
+.flash{
+    background-color: white;
+}
+
+.userflash{
+    background-color: green;
+}

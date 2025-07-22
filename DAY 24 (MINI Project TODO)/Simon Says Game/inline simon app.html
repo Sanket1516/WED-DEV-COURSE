@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simon Says Game</title>
+  <style>
+    body {
+      text-align: center;
+      background: #222;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      transition: background 0.3s, color 0.3s;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .light-mode {
+      background: #f4f4f4;
+      color: #222;
+    }
+    h1 {
+      margin-top: 1rem;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+    .scoreboard {
+      margin: 1rem auto;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 1.2rem;
+      background: rgba(0,0,0,0.2);
+      padding: 10px 20px;
+      border-radius: 10px;
+      max-width: 400px;
+    }
+    .game-board {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem 0;
+    }
+    .btn-container {
+      display: grid;
+      grid-template-columns: repeat(2, 160px);
+      grid-template-rows: repeat(2, 160px);
+      gap: 30px;
+    }
+    .btn {
+      width: 160px;
+      height: 160px;
+      border: 6px solid #222;
+      border-radius: 20%;
+      cursor: pointer;
+      transition: box-shadow 0.2s, transform 0.2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+    .btn.red { background: #d95988; }
+    .btn.yellow { background: #f99b45; }
+    .btn.green { background: #63aa30; }
+    .btn.purple { background: #819ff9; }
+    .flash { box-shadow: 0 0 40px 10px #fff, 0 4px 20px rgba(0,0,0,0.2); }
+    .userflash { box-shadow: 0 0 40px 10px #00ff00, 0 4px 20px rgba(0,0,0,0.2); }
+    .game-over { animation: shake 0.3s; }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-10px); }
+      40% { transform: translateX(10px); }
+      60% { transform: translateX(-10px); }
+      80% { transform: translateX(10px); }
+      100% { transform: translateX(0); }
+    }
+    .controls {
+      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+.instructions-card {
+  background: #fff;
+  color: #000;
+  padding: 20px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  margin-bottom: 2rem;
+  text-align: left;
+  transition: background 0.3s, color 0.3s;
+}
+
+.instructions-card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.instructions-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.instructions-list li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.light-mode .instructions-card {
+  background: #fff;
+  color: #000;
+}
+
+body:not(.light-mode) .instructions-card {
+  background: #2b2b2b;
+  color: #fff;
+}
+
+    .toggle-btn, .startbutton, .strict-btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 0 5px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .startbutton { background: aquamarine; }
+    .strict-btn { background: #ffb347; }
+    .strict-on { background: #ff6347; color: #fff; }
+    .toggle-btn { background: #333; color: #fff; }
+    .light-mode .toggle-btn { background: #ddd; color: #222; }
+    @media (max-width: 600px) {
+      .btn {
+        width: 100px;
+        height: 100px;
+      }
+      .btn-container {
+        grid-template-columns: repeat(2, 100px);
+        grid-template-rows: repeat(2, 100px);
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Simon Says Game</h1>
+  <div class="scoreboard">
+    <span>Level: <span id="level">0</span></span>
+    <span>Score: <span id="score">0</span></span>
+    <span>High Score: <span id="highscore">0</span></span>
+  </div>
+  <h2 id="status">Press any key or Start to begin!</h2>
+  <div class="controls">
+    <button class="startbutton" type="button">Start Game</button>
+    <button class="strict-btn" type="button" id="strictBtn">Strict Mode: OFF</button>
+    <button class="toggle-btn" type="button" id="themeBtn">🌙 Dark Mode</button>
+  </div>
+
+  <div class="game-board">
+    <div class="btn-container">
+      <div class="btn red" id="red" data-sound="1"></div>
+      <div class="btn yellow" id="yellow" data-sound="2"></div>
+      <div class="btn green" id="green" data-sound="3"></div>
+      <div class="btn purple" id="purple" data-sound="4"></div>
+    </div>
+  </div>
+
+  <p class="instructions"><b>How to Play:</b></p>
+ <section class="instructions-card">
+  <ul class="instructions-list">
+    <li>🎮 Press any key or "Start Game" Button to begin.</li>
+    <li>💡 Watch the sequence of flashing colors and sounds.</li>
+    <li>🖱️ Repeat the sequence by clicking the buttons in order.</li>
+    <li>🚀 Progress through levels as the sequence grows longer.</li>
+    <li>⚠️ Strict Mode: One mistake ends the game!</li>
+    <li>🏆 Try to beat your high score!</li>
+    <li>🌗 Use Dark/Light mode for comfort.</li>
+  </ul>
+</section>
+
+  <audio id="sound1" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
+  <audio id="sound2" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
+  <audio id="sound3" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
+  <audio id="sound4" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
+
+  <script>
+    let btns = ["red", "yellow", "green", "purple"];
+    let gameseq = [], userseq = [];
+    let started = false, level = 0, score = 0, highscore = 0;
+    let strictMode = false;
+
+    const statusH2 = document.getElementById("status");
+    const levelSpan = document.getElementById("level");
+    const scoreSpan = document.getElementById("score");
+    const highscoreSpan = document.getElementById("highscore");
+    const startBtn = document.querySelector(".startbutton");
+    const strictBtn = document.getElementById("strictBtn");
+    const themeBtn = document.getElementById("themeBtn");
+
+    function playSound(color) {
+      let idx = btns.indexOf(color) + 1;
+      let audio = document.getElementById("sound" + idx);
+      if (audio) {
+        audio.currentTime = 0;
+        audio.play();
+      }
+    }
+
+    function flashBtn(color, isUser = false) {
+      let btn = document.getElementById(color);
+      btn.classList.add(isUser ? "userflash" : "flash");
+      playSound(color);
+      setTimeout(() => btn.classList.remove(isUser ? "userflash" : "flash"), isUser ? 200 : 500);
+    }
+
+    function showSequence() {
+      let i = 0;
+      let interval = setInterval(() => {
+        flashBtn(gameseq[i]);
+        i++;
+        if (i >= gameseq.length) clearInterval(interval);
+      }, 700);
+    }
+
+    function nextLevel() {
+      userseq = [];
+      level++;
+      score = level - 1;
+      levelSpan.textContent = level;
+      scoreSpan.textContent = score;
+      statusH2.textContent = `Level ${level}: Watch the sequence!`;
+      let randColor = btns[Math.floor(Math.random() * 4)];
+      gameseq.push(randColor);
+      setTimeout(showSequence, 700);
+    }
+
+    function checkUserInput(idx) {
+      if (userseq[idx] !== gameseq[idx]) {
+        document.body.classList.add("game-over");
+        playSound(gameseq[idx]);
+        statusH2.innerHTML = `Game Over! Your score was <b>${score}</b>.<br>${strictMode ? "Strict mode: " : ""}Press any key or Start to play again.`;
+        if (score > highscore) {
+          highscore = score;
+          highscoreSpan.textContent = highscore;
+        }
+        setTimeout(() => document.body.classList.remove("game-over"), 400);
+        started = false;
+        startBtn.disabled = false;
+        if (!strictMode) {
+          userseq = [];
+          setTimeout(() => {
+            statusH2.textContent = "Try again! Watch the sequence.";
+            showSequence();
+            started = true;
+          }, 1500);
+        } else {
+          resetGame();
+        }
+        return;
+      }
+      if (userseq.length === gameseq.length) {
+        setTimeout(() => {
+          statusH2.textContent = "Great! Next level...";
+          nextLevel();
+        }, 900);
+      }
+    }
+
+    function handleBtnClick() {
+      if (!started) return;
+      let color = this.id;
+      userseq.push(color);
+      flashBtn(color, true);
+      checkUserInput(userseq.length - 1);
+    }
+
+    function resetGame() {
+      gameseq = [];
+      userseq = [];
+      level = 0;
+      score = 0;
+      levelSpan.textContent = level;
+      scoreSpan.textContent = score;
+      started = false;
+      startBtn.disabled = false;
+    }
+
+    function startGame() {
+      resetGame();
+      started = true;
+      statusH2.textContent = "Level 1: Watch the sequence!";
+      startBtn.disabled = true;
+      setTimeout(nextLevel, 800);
+    }
+
+    document.querySelectorAll(".btn").forEach(btn => {
+      btn.addEventListener("click", handleBtnClick);
+    });
+
+    document.addEventListener("keydown", () => {
+      if (!started) startGame();
+    });
+
+    startBtn.addEventListener("click", startGame);
+
+    strictBtn.addEventListener("click", () => {
+      strictMode = !strictMode;
+      strictBtn.textContent = `Strict Mode: ${strictMode ? "ON" : "OFF"}`;
+      strictBtn.classList.toggle("strict-on", strictMode);
+    });
+
+    themeBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      themeBtn.textContent = document.body.classList.contains("light-mode") ? "🌞 Light Mode" : "🌙 Dark Mode";
+    });
+
+    if (localStorage.getItem("simonsays_highscore")) {
+      highscore = parseInt(localStorage.getItem("simonsays_highscore"));
+      highscoreSpan.textContent = highscore;
+    }
+
+    window.addEventListener("beforeunload", () => {
+      localStorage.setItem("simonsays_highscore", highscore);
+    });
+  </script>
+</body>
+</html>

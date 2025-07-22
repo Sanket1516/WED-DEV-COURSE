@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body ng-controller="ctrl">
+<h1>Table</h1>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    <tr ng-repeat="x in items">
+        <td>{{x.name}}</td>
+        <td>{{x.price}}</td>
+        <td><input type="number" ng-model="x.qyt"></td>
+    </tr>
+</table>
+
+<button type="button" ng-click="calctot()">Calculate the total</button>
+<h2>The total is {{total}}</h2>
+
+<script>
+    let app = angular.module("myapp", []);
+    app.controller("ctrl", function ($scope) {
+        $scope.items = [
+            { name: "Apple", price: 20, qyt: 0 },
+            { name: "Banana", price: 30, qyt: 0 },
+            { name: "Orange", price: 40, qyt: 0 },
+            { name: "Mango", price: 50, qyt: 0 }
+        ];
+
+        $scope.total = 0;
+
+        $scope.calctot = function () {
+            let tot = 0;
+            for (let i = 0; i < $scope.items.length; i++) {
+                tot += $scope.items[i].qyt * $scope.items[i].price;  
+            }
+            $scope.total = tot;
+        };
+    });
+</script>
+</body>
+</html>

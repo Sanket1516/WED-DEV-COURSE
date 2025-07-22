@@ -1,0 +1,332 @@
+{
+  "cats": {
+    "name": "cats",
+    "followers": 10000,
+    "following": 5,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1603311196352-6d1f5eeb9964",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1574158622682-e40e69881006",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "dogs": {
+    "name": "dogs",
+    "followers": 11500,
+    "following": 6,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1558788353-f76d92427f16",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1601758003122-58eab1e8e097",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1507146426996-ef05306b995a",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "birds": {
+    "name": "birds",
+    "followers": 13000,
+    "following": 7,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1508264165352-258db2ebd59b",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1501706362039-c6e809183e4a",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "nature": {
+    "name": "nature",
+    "followers": 14500,
+    "following": 8,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "cars": {
+    "name": "cars",
+    "followers": 16000,
+    "following": 9,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1552519507-da3b142c6e3d",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1502877338535-766e1452684a",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "food": {
+    "name": "food",
+    "followers": 17500,
+    "following": 10,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "travel": {
+    "name": "travel",
+    "followers": 19000,
+    "following": 11,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "technology": {
+    "name": "technology",
+    "followers": 20500,
+    "following": 12,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "fitness": {
+    "name": "fitness",
+    "followers": 22000,
+    "following": 13,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1599058917212-d750089bc7f7",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1583454110559-21f2fa2d9e3d",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1605296867304-46d5465a13f1",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "fashion": {
+    "name": "fashion",
+    "followers": 23500,
+    "following": 14,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1542068829-1115f7259450",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1495121605193-b116b5b09c58",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "movies": {
+    "name": "movies",
+    "followers": 25000,
+    "following": 15,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1505685296765-3a2736de412f",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1582575073171-4c56c0c29a8a",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "books": {
+    "name": "books",
+    "followers": 26500,
+    "following": 16,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1512820790803-83ca734da794",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1528207776546-365bb710ee93",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "gaming": {
+    "name": "gaming",
+    "followers": 28000,
+    "following": 17,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1606813902661-c927d6eb8f93",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1604089227680-e6c3c9dfe67c",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1612213530973-7c9efb9f7d53",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "art": {
+    "name": "art",
+    "followers": 29500,
+    "following": 18,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1533110001337-7af7fdbcd5c3",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  },
+  "music": {
+    "name": "music",
+    "followers": 31000,
+    "following": 19,
+    "posts": [
+      {
+        "image": "https://images.unsplash.com/photo-1511376777868-611b54f68947",
+        "likes": 150,
+        "comments": 15
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1497032628192-86f99bcd76bc",
+        "likes": 250,
+        "comments": 25
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1506157786151-b8491531f063",
+        "likes": 350,
+        "comments": 35
+      }
+    ]
+  }
+}

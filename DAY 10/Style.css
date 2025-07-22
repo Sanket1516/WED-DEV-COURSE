@@ -1,0 +1,52 @@
+#outerdiv{
+    height: 700px;
+    width:1200px;
+    display: grid;
+    grid-template-rows: repeat(12,1fr);
+    grid-template-columns: repeat(12,1fr);
+    background-color: rgb(238, 162, 234);
+    grid-gap:10px;
+}
+
+#header{
+    grid-column:1 / span 12;
+}
+
+#sidebar{
+    grid-row: 2 /span 10;
+    grid-column: 1 / span 4;
+}
+
+#navigation{
+    grid-column: 5/span 4;
+}
+
+#ads{
+    grid-column: 9/span 4;
+    grid-row: 2 / span 10;
+}
+
+#main{
+    grid-row: 3 / span 9;
+    grid-column: 5/span 4;
+}
+
+#footer{
+    grid-column:1 / span 12;
+}
+
+.inner{
+    border:10px solid white;
+}
+
+body{
+    background-color: black;
+}
+
+@media (max-width : 750px){
+    #navigation{
+        grid-column:1 / span 12;
+    }
+
+    
+}

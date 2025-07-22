@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Your name is <%= name %></h1>
+    <h2>Your dice has rolled <%= num %></h2>
+
+    <%if(num==6){%>
+        <h3>Congo! you can roll dice again</h3>
+    <% } %>
+
+    <h3>Your followers are : </h3>
+    <% for(let i of followers){ %>
+    <li><%= i %></li>
+    <%}%>
+    
+</body>
+</html>

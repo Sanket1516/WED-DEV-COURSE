@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IG Page</title>
+    <style>
+        img{
+            height: 500px;
+            width: 1000px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>This acconts Belongs to <%=userdata.name%></h1>
+    <p>Followers = <%= userdata.followers %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Following = <%= userdata.following %></p>
+    <h3>Posts</h3>
+    <%for(let i of userdata.posts){%>
+        <img src=<%=i.image%> alt="some image">
+        <p>Likes = <%= i.likes %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Comments = <%= i.comments %></p>
+    <% } %>
+</body>
+</html>

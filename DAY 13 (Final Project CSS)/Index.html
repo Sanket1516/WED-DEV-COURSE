@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,100,1,200&icon_names=close_fullscreen,speaker">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Style.css">
+    <link rel="icon" href="./Assets/logo.png">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="main">
+    <div class="sidebar">
+        <div class="nav">
+            <div class="nav-option" style="opacity: 1;">
+                <i class="fa-solid fa-house"></i>
+                <a href="#">Home</a>
+            </div>
+            <div class="nav-option">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <a href="#">Search</a>
+            </div>
+        </div>
+
+        <div class="library" >
+            <div class="options">
+                <div class="lib-options  nav-option">
+                <img src="./Assets/library_icon.png" alt="Libaray">
+                <a href="#">Your Libraray</a>
+            </div>
+
+                <div class="icons">
+                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+
+            <div class="lib-boxes"></div>
+            <div class="box">
+                <p class="box-p1">Create your first playlist</p>
+                <p class="box-p2">It's easy,we'll help you</p>
+                <button class="badge">Create Playlist</button>
+            </div>
+
+            <div class="box">
+                <p class="box-p1">Find some podcast to follow</p>
+                <p class="box-p2">We'll keep updated on new episodes</p>
+                <button class="badge">Create Playlist</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="maincontent">
+        <div class="sticky-nav">
+            <div class="sticky-nav-icons">
+                <img src="./Assets/backward_icon.png" alt="backward_icon">
+                <img src="./Assets/forward_icon.png" alt="forward_icon" class="hide">
+            </div>
+            
+            <div class="sticky-nav-options">
+                <button class="badge navitems hide">Explore Premium</button>
+                <button class="badge navitems darkbadge"><i class="fa-regular fa-circle-down" style="margin-right: 5px;"></i>Install App</button>
+                <i class="fa-regular fa-user navitems user-spo" ></i>
+            </div>
+        </div>
+
+
+        <h2>Recently played</h2>
+<div class="cards-container">
+    <div class="card">
+        <img src="./Assets/Shershaah.jpg" alt="Shershaah" class="cardimage">
+        <p class="card-title">Shershaah</p>
+        <p class="card-info">Vishal–Shekhar · 2021</p>
+    </div>
+</div>
+
+
+            <h2>Trending now near you</h2>
+<div class="cards-container">
+    <div class="card">
+        <img src="./Assets/laggan.jpg" alt="Lagaan" class="cardimage">
+        <p class="card-title">Lagaan</p>
+        <p class="card-info">A.R. Rahman · 2001</p>
+    </div>
+    <div class="card">
+        <img src="./Assets/kabir singh.jpg" alt="Kabir Singh" class="cardimage">
+        <p class="card-title">Kabir Singh</p>
+        <p class="card-info">Various Artists · 2019</p>
+    </div>
+    <div class="card">
+        <img src="./Assets/rockstar.jpg" alt="Rockstar" class="cardimage">
+        <p class="card-title">Rockstar</p>
+        <p class="card-info">A.R. Rahman · 2011</p>
+    </div>
+        <div class="card">
+        <img src="./Assets/gullyboy.jpg" alt="Gully Boy" class="cardimage">
+        <p class="card-title">Gully Boy</p>
+        <p class="card-info">Various Artists · 2019</p>
+    </div>
+    <div class="card">
+        <img src="./Assets/ashique2.jpg" alt="Arijit Singh" class="cardimage">
+        <p class="card-title">Tum Hi Ho</p>
+        <p class="card-info">Arijit Singh · 2013</p>
+    </div>
+
+</div>
+
+
+           <h2>Featured Charts</h2>
+<div class="cards-container">
+    <div class="card">
+        <img src="./Assets/rani.jpg" alt="Bass Rani" class="cardimage">
+        <p class="card-title">Bass Rani</p>
+        <p class="card-info">Nucleya · 2015</p>
+    </div>
+    <div class="card">
+        <img src="./Assets/kantara.jpg" alt="Kantara" class="cardimage">
+        <p class="card-title">Kantara</p>
+        <p class="card-info">Ajaneesh Loknath · 2022</p>
+    </div>
+    <div class="card">
+        <img src="./Assets/jaavan.jpg" alt="Jawan" class="cardimage">
+        <p class="card-title">Jawan</p>
+        <p class="card-info">Anirudh · 2023</p>
+    </div>
+</div>
+
+            <div class="footer">
+                <div class="line"></div>
+            </div>
+    </div>
+    <div class="musicplayer">
+        <div class="left">
+            <img src="./Assets/rockstar.jpg" alt="Cuurrent Music">
+            <div class="titles">
+            <p class="box-p1 first">Rockstar</p>
+            <p class="box-p2 second">A.R. Rahman</p>
+            </div>
+
+            <div class="music_icons">
+            <i class="fa-regular fa-heart "></i>
+            <span class="material-symbols-outlined icon2">close_fullscreen</span>
+            </div>
+        </div>
+
+
+
+
+        <div class="Player">
+            <div class="controls">
+                <img src="./Assets/player_icon1.png" class="player-control-icon" alt="">
+                <img src="./Assets/player_icon2.png" class="player-control-icon" alt="">
+                <img src="./Assets/player_icon3.png" class="player-control-icon" alt="" style="opacity: 1; height: 1.75rem;">
+                <img src="./Assets/player_icon4.png" class="player-control-icon" alt="">
+                <img src="./Assets/player_icon5.png" class="player-control-icon" alt="">
+            </div>
+            <div class="playback-bar">
+                <span class="Cuurrent-time">00:00</span>
+                <input type="range" min="0" max="100" step="1" class="progress-bar">
+                <span class="remaining-time">4:00</span>
+            </div>
+        </div>
+        
+
+
+
+        <div class="right">
+            <div class="right-icons">
+            <i class="fa-regular fa-circle-play icons-right"></i>
+            <i class="fa-solid fa-microphone icons-right"></i>  
+            <i class="fa-solid fa-list icons-right"></i>
+            <span class="material-symbols-outlined icons-right">speaker</span>
+            <i class="fa-solid fa-volume-high icons-right"></i>
+            </div>
+
+            <div class="volume-bar">
+                <input type="range" min="0" max="100" step="1" class="volume">
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

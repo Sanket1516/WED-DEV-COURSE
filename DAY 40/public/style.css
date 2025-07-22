@@ -1,0 +1,21 @@
+.main{
+    background-color: aquamarine;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top:10px ;
+    width: auto;
+    height: auto;
+}
+
+body{
+    background-color: blanchedalmond;
+}
+
+.msg{
+    background-color: rgb(52 198 202);
+    color: white;
+    border-radius: 10px;
+    height: auto;
+}

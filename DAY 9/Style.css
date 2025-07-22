@@ -1,0 +1,14 @@
+#MainDiv{
+    display: flex;
+    width: 800px;
+    height: 500px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: 5px solid black;
+    align-items:center;
+}
+
+div div{
+    width: 100px;
+    height: 200px;
+}
