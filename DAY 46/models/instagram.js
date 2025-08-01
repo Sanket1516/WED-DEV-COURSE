@@ -79,5 +79,4 @@ const readData = async()=>{
     console.log(result);
 }
 
-
 readData();
