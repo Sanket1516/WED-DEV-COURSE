@@ -16,7 +16,7 @@ const cookieparser = require('cookie-parser');
 
 // This line tells our Express app to use the 'cookie-parser' middleware.
 // This is necessary to be able to read and write cookies in our routes.
-app.use(cookieparser());
+app.use(cookieparser("our_secretcode"));
 
 
 // This defines a GET route at the path "/setcookies".
@@ -49,10 +49,23 @@ app.get("/getcookies",(req, res)=>{
 
 
 // This line starts the server and makes it listen for incoming requests on a specific port.
-app.listen(3000, () => {
+app.listen(8080, () => {
   // Once the server is running, this message will be logged to the console.
   console.log('Server is running on port 3000');
 });
+
+//for sending signed cookies 
+app.get("/getSignedCookies",(req,res)=>{
+  res.cookie("name","sanket",{signed:true});
+  res.cookie("age",20,{signed:true});
+  res.send("Cookie Send");
+})
+
+//for verifying the signed cookie
+app.get("/verify",(req,res)=>{
+  let {name="safety issues",age="safety issues"} = req.signedCookies;
+  res.send(`Hii ${name} your age is ${age}`);
+})
 
 //only code
 // const express = require('express');
